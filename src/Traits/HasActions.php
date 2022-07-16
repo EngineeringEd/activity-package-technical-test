@@ -35,7 +35,7 @@ trait HasActions
                 'performer_type' => (new User)->getMorphClass(),
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
-                'action_type' => 'CREATE',
+                'action_type' => 'UPDATE',
                 'description' => 'The model was updated.',
             ]);
         });
@@ -46,7 +46,7 @@ trait HasActions
                 'performer_type' => (new User)->getMorphClass(),
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
-                'action_type' => 'CREATE',
+                'action_type' => 'DELETE',
                 'description' => 'The model was deleted.',
             ]);
         });

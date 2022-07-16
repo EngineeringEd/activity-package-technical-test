@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Activity\Tests;
 
+use Activity\Action;
+use Activity\Tests\Utils\Post;
 use Activity\Tests\Utils\TestCase;
 use Activity\Tests\Utils\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 
@@ -34,12 +37,11 @@ class ActivityTest extends TestCase
 
         $this->be($user);
 
+        /** @var Post $post */
         $post = $user->posts()->create([
             'title' => 'Test post',
             'body' => 'Test body',
         ]);
-
-        dump(__('executivesplace/activity-package-technical-test::descriptions.created'));
 
         static::assertCount(1, $post->actions);
         static::assertCount(1, $user->performedActions);
