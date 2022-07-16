@@ -16,7 +16,7 @@ trait HasActions
         return $this->hasMany(Action::class, 'subject_id', 'id');
     }
 
-    public static function bootHasActionsTrait(): void
+    public static function bootHasActions(): void
     {
         static::created(function (Model $item) {
             Action::create([
@@ -25,7 +25,7 @@ trait HasActions
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
                 'action_type' => 'CREATE',
-                'description' => 'The model was created.',
+                'description' => 'The model was created',
             ]);
         });
 
@@ -36,7 +36,7 @@ trait HasActions
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
                 'action_type' => 'UPDATE',
-                'description' => 'The model was updated.',
+                'description' => 'The model was updated',
             ]);
         });
 
@@ -47,7 +47,7 @@ trait HasActions
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
                 'action_type' => 'DELETE',
-                'description' => 'The model was deleted.',
+                'description' => 'The model was deleted',
             ]);
         });
     }
