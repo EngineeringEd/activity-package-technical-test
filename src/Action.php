@@ -20,6 +20,7 @@ use Illuminate\Foundation\Auth\User;
 class Action extends Model implements IAction
 {
     protected $table = 'actions';
+    protected $guarded = [];
     protected array $allowedActionTypes = ['CREATE', 'UPDATE', 'DELETE'];
 
     public function getActionType(): string

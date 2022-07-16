@@ -39,6 +39,8 @@ class ActivityTest extends TestCase
             'body' => 'Test body',
         ]);
 
+        dump(__('executivesplace/activity-package-technical-test::descriptions.created'));
+
         static::assertCount(1, $post->actions);
         static::assertCount(1, $user->performedActions);
         static::assertSame('The model was created', $post->actions->first()->getDescription());
