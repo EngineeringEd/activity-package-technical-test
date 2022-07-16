@@ -59,6 +59,7 @@ class ActivityTest extends TestCase
 
         $this->be($user);
 
+        /** @var Post $post */
         $post = $user->posts()->create([
             'title' => 'Test post',
             'body' => 'Test body',
@@ -83,6 +84,7 @@ class ActivityTest extends TestCase
 
         $this->be($user);
 
+        /** @var Post $post */
         $post = $user->posts()->create([
             'title' => 'Test post',
             'body' => 'Test body',

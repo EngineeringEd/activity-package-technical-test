@@ -25,7 +25,7 @@ trait HasActions
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
                 'action_type' => 'CREATE',
-                'description' => 'The model was created',
+                'description' => __('activity-package::descriptions.created'),
             ]);
         });
 
@@ -36,7 +36,7 @@ trait HasActions
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
                 'action_type' => 'UPDATE',
-                'description' => 'The model was updated',
+                'description' => __('activity-package::descriptions.updated'),
             ]);
         });
 
@@ -47,7 +47,7 @@ trait HasActions
                 'subject_type' => $item->getMorphCLass(),
                 'subject_id' => $item->id,
                 'action_type' => 'DELETE',
-                'description' => 'The model was deleted',
+                'description' => __('activity-package::descriptions.deleted'),
             ]);
         });
     }
