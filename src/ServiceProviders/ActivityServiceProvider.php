@@ -18,7 +18,11 @@ class ActivityServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../database/migrations' => database_path('migrations'),
         ]);
-
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
+        /**
+         * Commented this out so the migration isn't loaded when service provider is booted
+         * This gives the developer control over the migration so they can make changes without
+         * having to run php artisn migrate:fresh.
+         */
+//        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
     }
 }

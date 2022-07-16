@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Action extends Model
 {
+    protected $table = 'actions';
+
     // TODO: Write logic for actions model
 }
