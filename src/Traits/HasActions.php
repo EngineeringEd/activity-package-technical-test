@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Activity;
+namespace Activity\Traits;
 
 trait HasActions
 {

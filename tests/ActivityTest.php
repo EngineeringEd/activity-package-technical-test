@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Activity\Tests;
 
+use Activity\Tests\Utils\TestCase;
+use Activity\Tests\Utils\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 
