@@ -46,6 +46,7 @@ class ActivityTest extends TestCase
         static::assertCount(1, $post->actions);
         static::assertCount(1, $user->performedActions);
         static::assertSame('The model was created', $post->actions->first()->getDescription());
+        static::assertSame('CREATE', $post->actions->last()->getActionType());
         static::assertTrue($post->actions->first()->is($user->performedActions->first()));
     }
 
@@ -71,6 +72,7 @@ class ActivityTest extends TestCase
         static::assertCount(2, $post->actions);
         static::assertCount(2, $user->performedActions);
         static::assertSame('The model was updated', $post->actions->last()->getDescription());
+        static::assertSame('UPDATE', $post->actions->last()->getActionType());
         static::assertTrue($post->actions->last()->is($user->performedActions->last()));
     }
 
@@ -94,5 +96,6 @@ class ActivityTest extends TestCase
 
         static::assertCount(2, $user->performedActions);
         static::assertSame('The model was deleted', $user->performedActions->last()->getDescription());
+        static::assertSame('DELETE', $post->actions->last()->getActionType());
     }
 }
